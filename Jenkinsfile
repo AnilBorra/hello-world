@@ -37,7 +37,7 @@ pipeline{
 			steps{
 				sshagent(credentials: [''], ignoreMissing: true) {
 					
-  				  sh 'scp absoft_jfrog/webapp5.war http://54.165.1.188:8080/opt/apache-tomcat-9.0.43/webapps/'
+  				  sh 'scp absoft_jfrog/webapp5.war ubuntu@54.165.1.188:8080/opt/apache-tomcat-9.0.43/webapps/'
 				}
 			}
 		}
