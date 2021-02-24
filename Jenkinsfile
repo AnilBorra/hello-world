@@ -35,8 +35,9 @@ pipeline{
 	    } 
 		stage('Deploy Artifactory'){
 			steps{
-				sshagent(['CREDENTIALS_ID']) {
-  				  sh 'scp webapp/target/webapp5.war http://54.165.1.188:8080/opt/apache-tomcat-9.0.43/webapps/'
+				sshagent(credentials: [''], ignoreMissing: true) {
+					
+  				  sh 'scp absoft_jfrog/webapp5.war http://54.165.1.188:8080/opt/apache-tomcat-9.0.43/webapps/'
 				}
 			}
 		}
