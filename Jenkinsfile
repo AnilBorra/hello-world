@@ -15,6 +15,24 @@ pipeline{
 			}
 	 
 	       }
+		stage('Publish Artifacts'){
+			steps{
+				rtUpload (
+					serverId: 'absoft_jfrog',
+					spec: '''{
+						"files": [
+							{
+								"pattern": "webapp/*.war",
+								"target": "hello-world"
+							}
+						]
+					}''',
+					buildName: '${Build_Name}',
+					buildNumber: '${Build_Number}'
+				)
+			}
+	 
+	    }
 		
 	    
 	}
