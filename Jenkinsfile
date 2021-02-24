@@ -23,7 +23,7 @@ pipeline{
 						"files": [
 							{
 								"pattern": "webapp/*.war",
-								"target": "hello-world"
+								"target": "absoft_jfrog"
 							}
 						]
 					}''',
